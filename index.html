@@ -5,87 +5,275 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Streffie（ストレフィ）のご紹介｜Solh Wellness</title>
+<meta name="description" content="10秒、カメラを見るだけのAIストレスチェック「Streffie」と、Solhのメンタルウェルネスサービスのご紹介。">
 <style>
-:root{--bg:#fbfaf7;--ink:#1f2328;--sub:#5b6168;--line:#e3e0d8;--accent:#2f6f62;--card:#ffffff}
-@media (prefers-color-scheme:dark){:root{--bg:#16181b;--ink:#ecebe7;--sub:#a9adb3;--line:#30343a;--accent:#7cc3b2;--card:#1d2024}}
+:root{
+  --bg:#f7f8fc;--ink:#1d2130;--sub:#5a6072;--line:#e1e4ee;--card:#ffffff;
+  --blue:#4a5bd8;--blue-soft:#eef0fd;--red:#e0453a;--teal:#2c8a7a;--orange:#e9875a;--purple:#7b55d6;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#14161d;--ink:#eceef5;--sub:#a5abbb;--line:#2c3040;--card:#1c1f29;--blue:#8b98f2;--blue-soft:#232845;--red:#ff7b70;--teal:#6fd0bd;--orange:#f3a882;--purple:#b39bf2}
+}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:"Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif;line-height:1.8;font-size:16px}
-.wrap{max-width:760px;margin:0 auto;padding:32px 16px 64px}
-.eyebrow{color:var(--sub);font-size:13px;margin:0 0 8px}
-h1{font-size:28px;line-height:1.4;margin:0 0 12px}
-h2{font-size:19px;margin:40px 0 12px;padding-top:24px;border-top:1px solid var(--line)}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Hiragino Sans","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;line-height:1.8;font-size:16px;-webkit-text-size-adjust:100%}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--blue)}
+.wrap{max-width:960px;margin:0 auto;padding:0 16px}
+header.hero{background:linear-gradient(135deg,#3f4fd1,#6a5ae0);color:#fff;padding:40px 0 48px}
+.hero .eyebrow{font-size:13px;opacity:.9;margin:0 0 10px}
+.hero h1{font-size:clamp(26px,5vw,40px);line-height:1.35;margin:0 0 14px;letter-spacing:.02em}
+.hero p.lead{font-size:17px;margin:0 0 22px;max-width:40em}
+.hero .cta{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-block;padding:10px 18px;border-radius:999px;text-decoration:none;font-weight:600;font-size:15px}
+.btn.primary{background:#fff;color:#3f4fd1}
+.btn.ghost{border:1.5px solid rgba(255,255,255,.8);color:#fff}
+.hero-figure{margin-top:28px;border-radius:12px;overflow:hidden;box-shadow:0 12px 32px rgba(0,0,0,.25)}
+nav.toc{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+nav.toc ul{list-style:none;margin:0;padding:8px 0;display:flex;gap:6px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav.toc a{display:block;padding:4px 12px;border-radius:999px;font-size:13px;color:var(--sub);text-decoration:none}
+nav.toc a:hover{background:var(--blue-soft);color:var(--blue)}
+section{padding:48px 0;border-bottom:1px solid var(--line)}
+.kicker{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--blue);background:var(--blue-soft);border-radius:999px;padding:2px 10px;margin-bottom:10px}
+h2{font-size:clamp(21px,3.6vw,28px);line-height:1.45;margin:0 0 12px}
+h2 em{font-style:normal;color:var(--blue)}
+h3{font-size:17px;margin:0 0 6px}
 p{margin:0 0 12px}
-.lead{font-size:17px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:12px 0}
-.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
-.card b{display:block;color:var(--accent);font-size:13px}
-.card strong{display:block;font-size:16px;margin-bottom:4px}
-.card span{color:var(--sub);font-size:14px;line-height:1.6;display:block}
-ul,ol{padding-left:1.3em;margin:0 0 12px}
-li{margin:4px 0}
-.note{color:var(--sub);font-size:14px}
-.slides figure{margin:0 0 16px}
-.slides img{width:100%;height:auto;border:1px solid var(--line);border-radius:8px;display:block}
-.slides figcaption{color:var(--sub);font-size:13px;margin-top:4px}
-.contact{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px}
-a{color:var(--accent)}
-footer{color:var(--sub);font-size:13px;margin-top:40px}
+.sub{color:var(--sub)}
+.note{color:var(--sub);font-size:13.5px}
+.split{display:grid;grid-template-columns:1fr;gap:24px;align-items:center}
+@media (min-width:760px){.split{grid-template-columns:1.05fr 1fr}.split.rev>:first-child{order:2}}
+.slide{border-radius:10px;overflow:hidden;border:1px solid var(--line);background:#fff;box-shadow:0 4px 14px rgba(20,30,80,.08)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin:18px 0 8px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.stat .tag{font-size:12px;font-weight:700;color:#fff;background:var(--blue);border-radius:999px;padding:1px 9px;display:inline-block}
+.stat .tag.jp{background:var(--red)}
+.stat .num{font-size:34px;font-weight:800;line-height:1.2;margin:6px 0 2px}
+.stat .num.jp{color:var(--red)}.stat .num.w{color:var(--blue)}
+.stat .lbl{font-size:14px;color:var(--sub);line-height:1.6}
+.points{list-style:none;padding:0;margin:12px 0}
+.points li{position:relative;padding:10px 12px 10px 44px;margin:8px 0;background:var(--card);border:1px solid var(--line);border-radius:10px}
+.points li::before{content:"";position:absolute;left:14px;top:15px;width:18px;height:18px;border-radius:50%;background:var(--blue)}
+.points li b{display:block}
+.points.purple li::before{background:var(--purple)}
+.points.red li::before{background:var(--red)}
+.callout{background:var(--blue-soft);border-radius:10px;padding:12px 16px;font-size:15px}
+.eco{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:18px 0}
+.eco .card{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--orange);border-radius:12px;padding:14px 16px}
+.eco .card .role{font-size:12px;font-weight:700;color:var(--orange)}
+.eco .card h3{margin:2px 0 4px}
+.eco .card p{font-size:14px;color:var(--sub);margin:0;line-height:1.6}
+.two{display:grid;grid-template-columns:1fr;gap:14px}
+@media (min-width:760px){.two{grid-template-columns:1fr 1fr}}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.panel ul{margin:6px 0 0;padding-left:1.2em}
+.panel li{margin:4px 0;font-size:15px}
+.flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;counter-reset:f;margin:16px 0 0}
+.flow div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px 14px 56px;position:relative}
+.flow div::before{counter-increment:f;content:counter(f);position:absolute;left:16px;top:14px;width:28px;height:28px;border-radius:50%;background:var(--blue);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}
+.timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:16px 0 8px}
+.timeline div{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px;text-align:center;font-size:14px}
+.timeline div b{display:block;color:var(--teal);font-size:15px}
+@media (max-width:520px){.timeline{grid-template-columns:1fr}}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:16px}
+.gallery figure{margin:0}
+.gallery figcaption{font-size:13px;color:var(--sub);margin-top:6px}
+.gallery a{display:block}
+.contact{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+.contact .row{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0}
+.btn.solid{background:var(--blue);color:#fff}
+.btn.line{border:1.5px solid var(--blue);color:var(--blue)}
+footer{padding:28px 0 48px;color:var(--sub);font-size:13px}
 </style>
 </head>
 <body>
-<main class="wrap">
-<p class="eyebrow">Solh Wellness（インド）｜AI World 2026 秋 東京（幕張メッセ、2026年11月4日〜6日）出展</p>
-<h1>顔を映すだけ。いまのストレス傾向をAIが推定。</h1>
-<p class="lead">Streffie（ストレフィ）は、表情の画像からストレスの傾向をAIが推定するウェルネス体験です。結果はその場で画面に表示されます。</p>
 
-<h2>会社での使い方</h2>
-<p>Solhは、AIを使ったメンタルウェルネスのサービスを提供するインドの企業です。気づく・見える化する・話せる・日々ケアする、4つのサービスをそろえています。</p>
-<div class="grid">
-  <div class="card"><b>気づく</b><strong>Streffie</strong><span>表情の画像からストレスの傾向を推定します。</span></div>
-  <div class="card"><b>見える化する</b><strong>Smart Dashboards</strong><span>チーム・部署ごとのストレス傾向を、個人が特定されない形で集計して表示します。</span></div>
-  <div class="card"><b>話せる</b><strong>Solh Buddy</strong><span>声をかけ、気持ちの振り返りを手伝うAIの話し相手です。緊急時の相談窓口の代わりではありません。</span></div>
-  <div class="card"><b>日々ケアする</b><strong>Guided Plans</strong><span>ストレスや燃え尽きなど、状態に合わせた個別のケアプランです。</span></div>
-</div>
-<p class="note">※ 日本語で利用できる範囲や、日本での提供方法（共用の端末、各自のスマホ・PCなど）は、お問い合わせください。</p>
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Solh Wellness（インド）｜AI World 2026 秋 東京（幕張メッセ、2026年11月4日〜6日）出展</p>
+    <h1>人と組織に、折れない強さを。<br>10秒、カメラを見るだけのストレスチェック。</h1>
+    <p class="lead">Streffie（ストレフィ）は、表情の画像からストレスの傾向をAIが推定するウェルネス体験です。結果はその場で、1〜10のスコアで表示されます。</p>
+    <div class="cta">
+      <a class="btn primary" href="#contact">オンライン説明を相談する</a>
+      <a class="btn ghost" href="#slides">セミナー資料を見る</a>
+    </div>
+    <div class="hero-figure"><img src="slides/01.jpg" width="1600" height="900" alt="Solh の表紙スライド。人と組織に、折れない強さを。"></div>
+  </div>
+</header>
 
-<h2>法定のストレスチェックの「前後」を補う使い方</h2>
-<ul>
-  <li><strong>受検の前に</strong>　自分の状態に気づくきっかけに</li>
-  <li><strong>受検のあとも</strong>　年1回の間を日常的に把握</li>
-  <li><strong>フォローに</strong>　日々のセルフケアを支える</li>
-</ul>
-<p class="note">※ Solhのサービスは医療行為・診断を行うものではありません。法定のストレスチェックの代わりにはなりません。</p>
+<nav class="toc" aria-label="ページ内の目次">
+  <div class="wrap"><ul>
+    <li><a href="#why">なぜ今</a></li>
+    <li><a href="#stress">ストレスと向き合う</a></li>
+    <li><a href="#streffie">Streffie</a></li>
+    <li><a href="#eco">5つのサービス</a></li>
+    <li><a href="#habit">悪習慣・睡眠</a></li>
+    <li><a href="#use">会社での使い方</a></li>
+    <li><a href="#data">データの扱い</a></li>
+    <li><a href="#slides">セミナー資料</a></li>
+    <li><a href="#contact">お問い合わせ</a></li>
+  </ul></div>
+</nav>
 
-<!-- スライド画像：Kapil氏のOK（会期後の公開可）が出てから、slides/ に画像を置いてこの節を有効にする
-<section class="slides">
-<h2>セミナー資料（11/5 登壇分）</h2>
-<figure><img src="slides/01.png" alt="スライド1" loading="lazy"><figcaption>スライド 1</figcaption></figure>
+<main>
+<section id="why">
+  <div class="wrap">
+    <span class="kicker">なぜ今</span>
+    <h2>社員の「燃え尽き」では終わらない。<br><em>揺らいでいるのは、会社の土台です。</em></h2>
+    <p class="sub">福利厚生ではなく、経営リスクの問題です。ストレスの見えない代償は、日本でも世界でも大きくなっています。</p>
+    <div class="stats">
+      <div class="stat"><span class="tag jp">日本</span><div class="num jp">68.3%</div><div class="lbl">仕事に強いストレスを感じている日本の働く人</div></div>
+      <div class="stat"><span class="tag jp">日本</span><div class="num jp">6%</div><div class="lbl">熱意をもって働く社員（世界最低水準）</div></div>
+      <div class="stat"><span class="tag jp">日本</span><div class="num jp">43.9%</div><div class="lbl">心の不調が最多の年代を「10〜20代」とした企業</div></div>
+      <div class="stat"><span class="tag">世界</span><div class="num w">22%</div><div class="lbl">燃え尽き（バーンアウト）の兆候がある社員</div></div>
+      <div class="stat"><span class="tag">世界</span><div class="num w">$10T</div><div class="lbl">意欲低下による生産性損失（年間、世界GDPの9%）</div></div>
+      <div class="stat"><span class="tag">世界</span><div class="num w">120億日</div><div class="lbl">抑うつ・不安などで失われる年間の労働日数</div></div>
+    </div>
+    <p class="note">出典：厚生労働省「令和6年 労働安全衛生調査」、Gallup「State of the Global Workplace」2024/2026、日本生産性本部（2023）、McKinsey Health Institute（2023）、WHO/ILO（2022）</p>
+  </div>
 </section>
--->
 
-<h2>画像とデータの扱い（展示会での体験の場合）</h2>
-<ul>
-  <li>お名前・連絡先は入力しません（匿名モード）。</li>
-  <li>画像はストレスの推定にだけ使い、AWS India（Mumbai region）のサーバーで解析したあと、数秒で削除します。画像は保存しません。</li>
-  <li>結果は日時・キオスク番号・セッション番号とだけ記録され、お名前や連絡先とは結びつきません。</li>
-</ul>
-<p class="note">※ 会社でお使いいただく場合のデータの扱いは、導入の形に合わせてご説明します。</p>
+<section id="stress">
+  <div class="wrap split">
+    <div>
+      <span class="kicker">01</span>
+      <h2>「メンタルヘルス」ではなく、<br><em>「ストレス」と向き合う。</em></h2>
+      <h3>疾患ではなく、日常のストレスを数値化</h3>
+      <p>扱うのは、誰もが抱える日常のストレスです。医学的な疾患とは明確に区別し、数値で捉えます。</p>
+      <h3>ストレスを成果の力に</h3>
+      <p>適度なストレスは成果の原動力です。燃え尽きる前に、最適なゾーンへ戻すことを目指します。</p>
+    </div>
+    <div class="slide"><img src="slides/04.jpg" width="1600" height="900" loading="lazy" alt="ストレスの度合いと生産性の関係を示す曲線。最適ゾーンを超えると燃え尽きに向かう。"></div>
+  </div>
+</section>
 
-<h2>ご相談の流れ</h2>
-<ol>
-  <li>オンラインでのご説明（30分程度。デモをご覧いただけます）</li>
-  <li>部署や拠点など、小さな単位で始める方法のご相談</li>
-  <li>本格的な導入のご検討</li>
-</ol>
+<section id="streffie">
+  <div class="wrap split rev">
+    <div>
+      <span class="kicker">02 STREFFIE</span>
+      <h2>見えないものは、改善できない。<br><em>だから「10秒」で見える化する。</em></h2>
+      <ul class="points purple">
+        <li><b>カメラを見るだけ</b>ウェアラブルや専用機器は不要です。</li>
+        <li><b>その場でスコア化</b>ストレスの状態を1〜10で表示します。</li>
+        <li><b>プライバシーに配慮</b>顔画像は保存せず、匿名で使えます。</li>
+        <li><b>マルチデバイス</b>キオスク・PC・スマホに対応しています。</li>
+      </ul>
+      <p class="callout">ストレスは30〜60日かけて蓄積し、やがて離職などの数字に表れます。Streffieなら、手遅れになる前に「小さな兆し」をつかめます。</p>
+    </div>
+    <div class="slide"><img src="slides/05.jpg" width="1600" height="900" loading="lazy" alt="Streffie のスライド。10秒で完了するAIストレスチェック。"></div>
+  </div>
+</section>
 
-<h2>お問い合わせ</h2>
-<div class="contact">
-<p><strong>日本語でのお問い合わせ</strong>：遊玄企画　青戸 晃生<br>
-携帯 <a href="tel:08011409274">080-1140-9274</a>｜メール <a href="mailto:aoto.kosei@you-gen.com?subject=Streffie%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%81%AE%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B">aoto.kosei@you-gen.com</a></p>
-<p><strong>Solh Wellness</strong>：<a href="mailto:info@solhapp.com">info@solhapp.com</a>｜<a href="https://www.solhapp.com" rel="noopener">www.solhapp.com</a></p>
-<p class="note">※ 遊玄企画は、Streffieの日本でのご案内とご連絡を担当しています。</p>
-</div>
-<footer>2026年11月</footer>
+<section id="eco">
+  <div class="wrap">
+    <span class="kicker">03</span>
+    <h2>必要なのは「単発の施策」ではなく、<br><em>継続的に支える「エコシステム」です。</em></h2>
+    <div class="eco">
+      <div class="card"><div class="role">気づく</div><h3>Streffie</h3><p>10秒で終わるAIストレスチェック。</p></div>
+      <div class="card"><div class="role">寄り添う</div><h3>Solh Buddy</h3><p>24時間365日、気持ちの振り返りを手伝うAIの話し相手。緊急時の相談窓口の代わりではありません。</p></div>
+      <div class="card"><div class="role">見える化する</div><h3>SMART Dashboard</h3><p>チーム・部署の傾向を、個人が特定されない形で集計して表示。</p></div>
+      <div class="card"><div class="role">日々ケアする</div><h3>Solh App</h3><p>専門家による1,000以上のコンテンツと、状態に合わせたケアプラン。</p></div>
+      <div class="card"><div class="role">回復を支える</div><h3>Prarambh Life</h3><p>悪習慣や依存からの回復を支えるプログラム。</p></div>
+    </div>
+    <div class="slide"><img src="slides/06.jpg" width="1600" height="900" loading="lazy" alt="Streffie、Solh Buddy、SMART Dashboard、Solh App、Prarambh Life の5つのサービス。"></div>
+    <p class="note" style="margin-top:10px">※ 日本語で利用できる範囲や、日本での提供方法（共用の端末、各自のスマホ・PCなど）は、お問い合わせください。</p>
+  </div>
+</section>
+
+<section id="habit">
+  <div class="wrap">
+    <span class="kicker">04</span>
+    <h2>慢性化したストレスが招く<br><em>「悪習慣・依存」と「睡眠不調」にも対応。</em></h2>
+    <div class="two">
+      <div class="panel">
+        <h3>依存・悪習慣からの回復支援（Prarambh Life）</h3>
+        <ul>
+          <li><b>飲酒・喫煙</b>の習慣を見直す</li>
+          <li><b>デジタル依存</b>：SNSやゲームの過剰利用</li>
+          <li><b>記録と再発予防</b>：衝動の記録、3〜6か月の伴走プラン</li>
+          <li><b>成果の見える化</b>：継続日数、節約できたお金と時間</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>Sleep &amp; Stress Reset（CBT-Iの考え方を取り入れた7日間）</h3>
+        <ul>
+          <li><b>朝晩のチェック</b>：ストレスと睡眠の関係を把握</li>
+          <li><b>毎日のレッスン</b>：睡眠を妨げる要因、就寝前の切り替え</li>
+          <li><b>ガイド付きワーク</b>：呼吸法、筋弛緩法、ヨガニドラ</li>
+          <li><b>選べる進め方</b>：セルフケア、または心理専門家の伴走</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="use">
+  <div class="wrap">
+    <span class="kicker">会社での使い方</span>
+    <h2>法定のストレスチェックの<em>「前後」を補う</em>使い方</h2>
+    <div class="timeline">
+      <div><b>受検の前に</b>自分の状態に気づくきっかけに</div>
+      <div><b>受検のあとも</b>年1回の間を日常的に把握</div>
+      <div><b>フォローに</b>日々のセルフケアを支える</div>
+    </div>
+    <p class="note">※ Solhのサービスは医療行為・診断を行うものではありません。法定のストレスチェックの代わりにはなりません。</p>
+  </div>
+</section>
+
+<section id="data">
+  <div class="wrap">
+    <span class="kicker">データの扱い</span>
+    <h2>画像とデータの扱い（展示会での体験の場合）</h2>
+    <ul class="points red">
+      <li><b>お名前・連絡先は入力しません</b>匿名モードで体験いただけます。</li>
+      <li><b>画像は保存しません</b>ストレスの推定にだけ使い、AWS India（Mumbai region）のサーバーで解析したあと、数秒で削除します。</li>
+      <li><b>結果は匿名で記録</b>日時・キオスク番号・セッション番号とだけ記録され、お名前や連絡先とは結びつきません。</li>
+    </ul>
+    <p class="note">※ 会社でお使いいただく場合のデータの扱いは、導入の形に合わせてご説明します。</p>
+  </div>
+</section>
+
+<section id="slides">
+  <div class="wrap">
+    <span class="kicker">セミナー資料</span>
+    <h2>AI World 2026 セミナー資料（日本語版）</h2>
+    <p class="sub">11/5 のセミナーでお見せしたスライドです。画像を押すと大きく表示されます。</p>
+    <div class="gallery">
+      <figure><a href="slides/01.jpg"><img src="slides/01.jpg" width="1600" height="900" loading="lazy" alt="スライド1 表紙"></a><figcaption>1. 人と組織に、折れない強さを。</figcaption></figure>
+      <figure><a href="slides/02.jpg"><img src="slides/02.jpg" width="1600" height="900" loading="lazy" alt="スライド2 揺らいでいるのは会社の土台"></a><figcaption>2. 揺らいでいるのは、会社の土台です。</figcaption></figure>
+      <figure><a href="slides/03.jpg"><img src="slides/03.jpg" width="1600" height="900" loading="lazy" alt="スライド3 ストレスの見えない代償"></a><figcaption>3. ストレスの見えない代償</figcaption></figure>
+      <figure><a href="slides/04.jpg"><img src="slides/04.jpg" width="1600" height="900" loading="lazy" alt="スライド4 ストレスと向き合う"></a><figcaption>4. 「ストレス」と向き合う</figcaption></figure>
+      <figure><a href="slides/05.jpg"><img src="slides/05.jpg" width="1600" height="900" loading="lazy" alt="スライド5 Streffie"></a><figcaption>5. 10秒で見える化する（Streffie）</figcaption></figure>
+      <figure><a href="slides/06.jpg"><img src="slides/06.jpg" width="1600" height="900" loading="lazy" alt="スライド6 エコシステム"></a><figcaption>6. 継続的に支えるエコシステム</figcaption></figure>
+      <figure><a href="slides/07.jpg"><img src="slides/07.jpg" width="1600" height="900" loading="lazy" alt="スライド7 悪習慣・依存と睡眠不調"></a><figcaption>7. 悪習慣・依存と睡眠不調にも対応</figcaption></figure>
+      <figure><a href="slides/08.jpg"><img src="slides/08.jpg" width="1600" height="900" loading="lazy" alt="スライド8 まずは10秒、ストレスチェックを"></a><figcaption>8. まずは10秒、ストレスチェックを。</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <span class="kicker">ご相談の流れ</span>
+    <h2>まずは30分のオンライン説明から</h2>
+    <div class="flow">
+      <div>オンラインでのご説明（30分程度。デモをご覧いただけます）</div>
+      <div>部署や拠点など、小さな単位で始める方法のご相談</div>
+      <div>本格的な導入のご検討</div>
+    </div>
+    <div class="contact" style="margin-top:22px">
+      <h3>日本語でのお問い合わせ：遊玄企画　青戸 晃生</h3>
+      <div class="row">
+        <a class="btn solid" href="mailto:aoto.kosei@you-gen.com?subject=Streffie%E3%81%AE%E3%81%94%E7%9B%B8%E8%AB%87&amp;body=%E4%BC%9A%E7%A4%BE%E5%90%8D%EF%BC%9A%0A%E3%81%8A%E5%90%8D%E5%89%8D%EF%BC%9A%0A%E3%81%94%E5%B8%8C%E6%9C%9B%E3%81%AE%E6%97%A5%E6%99%82%EF%BC%9A%0A">メールで相談する</a>
+        <a class="btn line" href="tel:08011409274">電話 080-1140-9274</a>
+      </div>
+      <p class="sub" style="margin:0">メール aoto.kosei@you-gen.com</p>
+      <p style="margin:14px 0 0"><b>Solh Wellness</b>：<a href="mailto:info@solhapp.com">info@solhapp.com</a>｜<a href="https://www.solhapp.com" rel="noopener">www.solhapp.com</a></p>
+      <p class="note" style="margin-top:10px">※ 遊玄企画は、Streffieの日本でのご案内とご連絡を担当しています。</p>
+    </div>
+  </div>
+</section>
 </main>
+
+<footer><div class="wrap">2026年11月｜掲載のスライドは Solh Wellness の資料です。</div></footer>
 </body>
 </html>
